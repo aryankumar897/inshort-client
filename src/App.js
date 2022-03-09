@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {  Box } from '@mui/material';
+
+import Articles from './components/Articles';
+
+import Footer from './components/Footer'
+import Header from "./components/Header"
+import InfoHeader from "./components/InfoHeader"
+
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  container: {
+    marginTop: 110,
+    width: '75%',
+    margin: '0 auto',
+
+  },
+
+})
+
 
 function App() {
+  const classes =useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+<Box>
+      <Header />
+      <Box className={classes.container}>
+       <InfoHeader / >
+        <Articles /> 
+      </Box>
+    
+    </Box>
+
+<Footer />
+</>
   );
 }
-
 export default App;
